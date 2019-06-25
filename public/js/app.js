@@ -86,6 +86,71 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/InjurySelector.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/InjurySelector.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      injury: {
+        knee: true,
+        hip: true,
+        spinal: true,
+        wrist: true,
+        whiplash: false
+      }
+    };
+  },
+  mounted: function mounted() {
+    self.injury = {
+      knee: true,
+      hip: true,
+      spinal: false,
+      wrist: true,
+      whiplash: false
+    };
+  },
+  updated: function updated() {
+    console.log(this.$data);
+  },
+  methods: {}
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/App.vue?vue&type=script&lang=js&":
 /*!*********************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/App.vue?vue&type=script&lang=js& ***!
@@ -2386,6 +2451,120 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/InjurySelector.vue?vue&type=template&id=2a3dcebe&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/InjurySelector.vue?vue&type=template&id=2a3dcebe& ***!
+  \*****************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-md-12" }, [
+        _c("div", { staticClass: "card" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "card-body" },
+            [
+              _vm._v("\n                    Knee\n                    "),
+              _c("toggle-button", {
+                attrs: { sync: true },
+                model: {
+                  value: _vm.injury.knee,
+                  callback: function($$v) {
+                    _vm.$set(_vm.injury, "knee", $$v)
+                  },
+                  expression: "injury.knee"
+                }
+              }),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v("\n                    Hip\n                    "),
+              _c("toggle-button", {
+                attrs: { sync: true },
+                model: {
+                  value: _vm.injury.hip,
+                  callback: function($$v) {
+                    _vm.$set(_vm.injury, "hip", $$v)
+                  },
+                  expression: "injury.hip"
+                }
+              }),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v("\n                    Spinal\n                    "),
+              _c("toggle-button", {
+                attrs: { sync: true },
+                model: {
+                  value: _vm.injury.spinal,
+                  callback: function($$v) {
+                    _vm.$set(_vm.injury, "spinal", $$v)
+                  },
+                  expression: "injury.spinal"
+                }
+              }),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v("\n                    Wrist\n                    "),
+              _c("toggle-button", {
+                attrs: { sync: true },
+                model: {
+                  value: _vm.injury.wrist,
+                  callback: function($$v) {
+                    _vm.$set(_vm.injury, "wrist", $$v)
+                  },
+                  expression: "injury.wrist"
+                }
+              }),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v("\n                    Whiplash\n                    "),
+              _c("toggle-button", {
+                attrs: { sync: true },
+                model: {
+                  value: _vm.injury.whiplash,
+                  callback: function($$v) {
+                    _vm.$set(_vm.injury, "whiplash", $$v)
+                  },
+                  expression: "injury.whiplash"
+                }
+              }),
+              _vm._v(" "),
+              _c("br")
+            ],
+            1
+          )
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-header" }, [
+      _c("strong", [_vm._v("Injuries")])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/App.vue?vue&type=template&id=91ac6b5c&":
 /*!*************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/App.vue?vue&type=template&id=91ac6b5c& ***!
@@ -2513,12 +2692,10 @@ var render = function() {
         { staticClass: "m-b-md" },
         [
           _c("h2", { staticClass: "title m-b-md" }, [
-            _vm._v("\n                        Diagnose\n                    ")
+            _vm._v("\n                Diagnose\n            ")
           ]),
           _vm._v(" "),
-          _c("toggle-button", {
-            attrs: { value: true, labels: { checked: "Foo", unchecked: "Bar" } }
-          })
+          _c("InjurySelector")
         ],
         1
       )
@@ -17417,14 +17594,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var vue_js_toggle_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-js-toggle-button */ "./node_modules/vue-js-toggle-button/dist/index.js");
 /* harmony import */ var vue_js_toggle_button__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue_js_toggle_button__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _views_App__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./views/App */ "./resources/js/views/App.vue");
-/* harmony import */ var _views_Welcome__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./views/Welcome */ "./resources/js/views/Welcome.vue");
-/* harmony import */ var _views_Diagnose__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/Diagnose */ "./resources/js/views/Diagnose.vue");
-/* harmony import */ var _views_ExcelImport__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./views/ExcelImport */ "./resources/js/views/ExcelImport.vue");
+/* harmony import */ var _components_InjurySelector_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/InjurySelector.vue */ "./resources/js/components/InjurySelector.vue");
+/* harmony import */ var _views_App__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./views/App */ "./resources/js/views/App.vue");
+/* harmony import */ var _views_Welcome__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/Welcome */ "./resources/js/views/Welcome.vue");
+/* harmony import */ var _views_Diagnose__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./views/Diagnose */ "./resources/js/views/Diagnose.vue");
+/* harmony import */ var _views_ExcelImport__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./views/ExcelImport */ "./resources/js/views/ExcelImport.vue");
+
 
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('ToggleButton', vue_js_toggle_button__WEBPACK_IMPORTED_MODULE_2__["ToggleButton"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('InjurySelector', _components_InjurySelector_vue__WEBPACK_IMPORTED_MODULE_3__["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
 
 
@@ -17435,25 +17615,94 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   routes: [{
     path: '/',
     name: 'home',
-    component: _views_Welcome__WEBPACK_IMPORTED_MODULE_4__["default"]
+    component: _views_Welcome__WEBPACK_IMPORTED_MODULE_5__["default"]
   }, {
     path: '/diagnose',
     name: 'diagnose',
-    component: _views_Diagnose__WEBPACK_IMPORTED_MODULE_5__["default"]
+    component: _views_Diagnose__WEBPACK_IMPORTED_MODULE_6__["default"]
   }, {
     path: '/import',
     name: 'import',
-    component: _views_ExcelImport__WEBPACK_IMPORTED_MODULE_6__["default"]
+    component: _views_ExcelImport__WEBPACK_IMPORTED_MODULE_7__["default"]
   }]
 }); // Start app
 
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   components: {
-    App: _views_App__WEBPACK_IMPORTED_MODULE_3__["default"]
+    App: _views_App__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
   router: router
 });
+
+/***/ }),
+
+/***/ "./resources/js/components/InjurySelector.vue":
+/*!****************************************************!*\
+  !*** ./resources/js/components/InjurySelector.vue ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _InjurySelector_vue_vue_type_template_id_2a3dcebe___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InjurySelector.vue?vue&type=template&id=2a3dcebe& */ "./resources/js/components/InjurySelector.vue?vue&type=template&id=2a3dcebe&");
+/* harmony import */ var _InjurySelector_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InjurySelector.vue?vue&type=script&lang=js& */ "./resources/js/components/InjurySelector.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _InjurySelector_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _InjurySelector_vue_vue_type_template_id_2a3dcebe___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _InjurySelector_vue_vue_type_template_id_2a3dcebe___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/InjurySelector.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/InjurySelector.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/InjurySelector.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_InjurySelector_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./InjurySelector.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/InjurySelector.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_InjurySelector_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/InjurySelector.vue?vue&type=template&id=2a3dcebe&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/InjurySelector.vue?vue&type=template&id=2a3dcebe& ***!
+  \***********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InjurySelector_vue_vue_type_template_id_2a3dcebe___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./InjurySelector.vue?vue&type=template&id=2a3dcebe& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/InjurySelector.vue?vue&type=template&id=2a3dcebe&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InjurySelector_vue_vue_type_template_id_2a3dcebe___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InjurySelector_vue_vue_type_template_id_2a3dcebe___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 

@@ -1,13 +1,13 @@
     <template>
         <div class="flex-center position-ref full-height">
             <div class="content">
-                <div  class="m-b-md">
+                <div class="m-b-md">
                     <h2 class="title m-b-md">
                         Diagnose
                     </h2>
+                    <InjurySelector></InjurySelector>
 
 
-<toggle-button :value="true" />
 
                 </div>
             </div>

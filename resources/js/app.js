@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import { ToggleButton } from 'vue-js-toggle-button'
+import InjurySelector from './components/InjurySelector.vue'
 
 Vue.component('ToggleButton', ToggleButton)
+Vue.component('InjurySelector', InjurySelector)
 Vue.use(VueRouter)
 
 import App from './views/App'
