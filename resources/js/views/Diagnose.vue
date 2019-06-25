@@ -5,7 +5,10 @@
                     <h2 class="title m-b-md">
                         Diagnose
                     </h2>
+                    
                     <InjurySelector></InjurySelector>
+<hr>
+                    <DiagnosesList></DiagnosesList>
 
 
 
@@ -20,7 +23,7 @@
         height: 100vh;
     }
     .flex-center {
-        align-items: center;
+        
         display: flex;
         justify-content: center;
     }

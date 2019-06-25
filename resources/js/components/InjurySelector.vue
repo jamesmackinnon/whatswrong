@@ -50,7 +50,7 @@
         },
 
         updated() {
-            console.log(this.$data);
+            E.$emit('updated', this.injury);
         },
 
         methods: {

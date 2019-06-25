@@ -15,7 +15,6 @@ class CreateInjuriesTable extends Migration
     {
         Schema::create('injuries', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('patient');
             $table->boolean('knee');
             $table->boolean('hip');
             $table->boolean('spinal');
@@ -24,6 +23,7 @@ class CreateInjuriesTable extends Migration
             $table->timestamps();
         });
     }
+ 
 
     /**
      * Reverse the migrations.
