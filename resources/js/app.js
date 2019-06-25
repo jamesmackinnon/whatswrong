@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import { ToggleButton } from 'vue-js-toggle-button'
 
+Vue.component('ToggleButton', ToggleButton)
 Vue.use(VueRouter)
 
 import App from './views/App'

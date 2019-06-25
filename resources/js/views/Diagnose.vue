@@ -6,6 +6,9 @@
                         Diagnose
                     </h2>
 
+
+<toggle-button :value="true" />
+
                 </div>
             </div>
         </div>

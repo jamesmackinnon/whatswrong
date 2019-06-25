@@ -22,7 +22,7 @@
         .flex-center {
             align-items: center;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
         }
 
         .position-ref {
