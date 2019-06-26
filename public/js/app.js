@@ -414,7 +414,61 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  mounted: function mounted() {
+    console.log('Component mounted.');
+  },
+  data: function data() {
+    return {
+      name: '',
+      file: '',
+      success: ''
+    };
+  },
+  methods: {
+    onFileChange: function onFileChange(e) {
+      console.log(e.target.files[0]);
+      this.file = e.target.files[0];
+    },
+    formSubmit: function formSubmit(e) {
+      e.preventDefault();
+      var formData = new FormData();
+      formData.append('file', this.file);
+      console.log(formData);
+      $.ajax({
+        url: '/formSubmit',
+        type: 'POST',
+        data: formData,
+        async: false,
+        cache: false,
+        contentType: false,
+        enctype: 'multipart/form-data',
+        processData: false,
+        success: function success(response) {
+          console.log(response);
+        }
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -525,7 +579,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.full-height[data-v-070ea226] {\n    height: 100vh;\n}\n.flex-center[data-v-070ea226] {\n    -webkit-box-align: center;\n            align-items: center;\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-pack: center;\n            justify-content: center;\n}\n.position-ref[data-v-070ea226] {\n    position: relative;\n}\n.top-right[data-v-070ea226] {\n    position: absolute;\n    right: 10px;\n    top: 18px;\n}\n.content[data-v-070ea226] {\n    text-align: center;\n}\n.title[data-v-070ea226] {\n    font-size: 60px;\n}\n.links > a[data-v-070ea226] {\n    color: #636b6f;\n    padding: 0 25px;\n    font-size: 12px;\n    font-weight: 600;\n    letter-spacing: .1rem;\n    text-decoration: none;\n    text-transform: uppercase;\n}\n.m-b-md[data-v-070ea226] {\n    margin-bottom: 30px;\n    color: #000000;\n}\n", ""]);
+exports.push([module.i, "\n.full-height[data-v-070ea226] {\n    height: 100vh;\n}\n.flex-center[data-v-070ea226] {\n    -webkit-box-align: center;\n            align-items: center;\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-pack: center;\n            justify-content: center;\n}\n.position-ref[data-v-070ea226] {\n    position: relative;\n}\n.top-right[data-v-070ea226] {\n    position: absolute;\n    right: 10px;\n    top: 18px;\n}\n.content[data-v-070ea226] {\n    text-align: center;\n}\n.title[data-v-070ea226] {\n    font-size: 60px;\n}\n.links>a[data-v-070ea226] {\n    color: #636b6f;\n    padding: 0 25px;\n    font-size: 12px;\n    font-weight: 600;\n    letter-spacing: .1rem;\n    text-decoration: none;\n    text-transform: uppercase;\n}\n.m-b-md[data-v-070ea226] {\n    margin-bottom: 30px;\n    color: #000000;\n}\n\n", ""]);
 
 // exports
 
@@ -2871,24 +2925,42 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "flex-center position-ref full-height" }, [
-      _c("div", { staticClass: "content" }, [
-        _c("div", { staticClass: "m-b-md" }, [
-          _c("h2", { staticClass: "title m-b-md" }, [
-            _vm._v("\n                Import\n            ")
-          ])
-        ])
+  return _c("div", { staticClass: "flex-center position-ref full-height" }, [
+    _c("div", { staticClass: "content" }, [
+      _c("div", { staticClass: "m-b-md" }, [
+        _c("h2", { staticClass: "title m-b-md" }, [
+          _vm._v("\n                Import Injury Data\n            ")
+        ]),
+        _vm._v(" "),
+        _c(
+          "form",
+          {
+            attrs: { enctype: "multipart/form-data" },
+            on: { submit: _vm.formSubmit }
+          },
+          [
+            _c("strong", [_vm._v("Excel File:")]),
+            _vm._v(" "),
+            _c("div", [
+              _c("input", {
+                staticClass: "form-control-file",
+                attrs: { type: "file" },
+                on: { change: _vm.onFileChange }
+              }),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v(" "),
+              _c("button", { staticClass: "btn btn-success" }, [
+                _vm._v("Submit")
+              ])
+            ])
+          ]
+        )
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 

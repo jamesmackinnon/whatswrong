@@ -15,7 +15,7 @@
 
 Route::get('/{any}', 'SinglePageController@index')->where('any', '.*');
 
-
+Route::post('/formSubmit', 'ExcelController@formSubmit');
 // Default laravel welcome page
 // Route::get('/', function () {
 //     return view('welcome');
