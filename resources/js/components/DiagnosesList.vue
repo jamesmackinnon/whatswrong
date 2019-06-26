@@ -25,10 +25,10 @@
         data: function() {
             return {
             injury: {
-                    knee: true,
-                    hip: true,
-                    spinal: true,
-                    wrist: true,
+                    knee: false,
+                    hip: false,
+                    spinal: false,
+                    wrist: false,
                     whiplash: false
             }
             }

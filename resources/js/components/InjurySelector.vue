@@ -27,30 +27,61 @@
 
 <script>
     export default {
-        data: function() {
+        data: function () {
             return {
-            injury: {
-                    knee: true,
-                    hip: true,
-                    spinal: true,
-                    wrist: true,
+                injury: {
+                    knee: false,
+                    hip: false,
+                    spinal: false,
+                    wrist: false,
                     whiplash: false
-            }
+                }
             }
         },
 
-        mounted() {
-            self.injury = {
-                    knee: true,
-                    hip: true,
-                    spinal: false,
-                    wrist: true,
-                    whiplash: false
-            }
+        mounted: function () {
+
+            // Fetch initial values from Database via API
+
+            var self = this;
+
+
+
+            $.ajax({
+                url: '/api/injury',
+                method: 'GET',
+                success: function (data) {
+                    var defaults = JSON.parse(data);
+
+                    self.injury = {
+
+                        knee: Boolean(defaults.knee),
+                        hip: Boolean(defaults.hip),
+                        spinal: Boolean(defaults.spinal),
+                        wrist: Boolean(defaults.wrist),
+                        whiplash: Boolean(defaults.whiplash)
+
+                    }
+
+
+                },
+                error: function (error) {
+                    console.error(error);
+                }
+            });
         },
 
         updated() {
             E.$emit('updated', this.injury);
+
+            $.ajax({
+                url: 'api/injury',
+                method: 'POST',
+                data: this.injury,
+                success: function () {
+                    console.log('POSTED!');
+                }
+            });
         },
 
         methods: {

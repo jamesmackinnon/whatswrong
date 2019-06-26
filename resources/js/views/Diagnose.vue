@@ -7,10 +7,8 @@
                     </h2>
                     
                     <InjurySelector></InjurySelector>
-<hr>
+                    <hr>
                     <DiagnosesList></DiagnosesList>
-
-
 
                 </div>
             </div>
@@ -57,5 +55,6 @@
     </style>
 
       <script>
-        export default {}
+        export default {    
+        }
     </script>

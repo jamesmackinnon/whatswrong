@@ -4,6 +4,7 @@ import { ToggleButton } from 'vue-js-toggle-button'
 import InjurySelector from './components/InjurySelector.vue'
 import DiagnosesList from './components/DiagnosesList.vue'
 
+// Components and expose global default data
 Vue.component('ToggleButton', ToggleButton)
 Vue.component('InjurySelector', InjurySelector)
 Vue.component('DiagnosesList', DiagnosesList)
@@ -43,5 +44,6 @@ window.E = new Vue();
 const app = new Vue({
     el: '#app',
     components: { App },
-    router,
+    router
+    
 });

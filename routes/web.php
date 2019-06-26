@@ -12,9 +12,11 @@
 */
 
 // Handoff control to vue/vue-router
+
 Route::get('/{any}', 'SinglePageController@index')->where('any', '.*');
 
+
 // Default laravel welcome page
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });

@@ -20,7 +20,6 @@ class CreateInjuriesTable extends Migration
             $table->boolean('spinal');
             $table->boolean('wrist');
             $table->boolean('whiplash');
-            $table->timestamps();
         });
     }
  

@@ -121,10 +121,10 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       injury: {
-        knee: true,
-        hip: true,
-        spinal: true,
-        wrist: true,
+        knee: false,
+        hip: false,
+        spinal: false,
+        wrist: false,
         whiplash: false
       }
     };
@@ -182,25 +182,45 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       injury: {
-        knee: true,
-        hip: true,
-        spinal: true,
-        wrist: true,
+        knee: false,
+        hip: false,
+        spinal: false,
+        wrist: false,
         whiplash: false
       }
     };
   },
   mounted: function mounted() {
-    self.injury = {
-      knee: true,
-      hip: true,
-      spinal: false,
-      wrist: true,
-      whiplash: false
-    };
+    // Fetch initial values from Database via API
+    var self = this;
+    $.ajax({
+      url: '/api/injury',
+      method: 'GET',
+      success: function success(data) {
+        var defaults = JSON.parse(data);
+        self.injury = {
+          knee: Boolean(defaults.knee),
+          hip: Boolean(defaults.hip),
+          spinal: Boolean(defaults.spinal),
+          wrist: Boolean(defaults.wrist),
+          whiplash: Boolean(defaults.whiplash)
+        };
+      },
+      error: function error(_error) {
+        console.error(_error);
+      }
+    });
   },
   updated: function updated() {
     E.$emit('updated', this.injury);
+    $.ajax({
+      url: 'api/injury',
+      method: 'POST',
+      data: this.injury,
+      success: function success() {
+        console.log('POSTED!');
+      }
+    });
   },
   methods: {}
 });
@@ -263,8 +283,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
 //
 //
 //
@@ -517,7 +535,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.full-height[data-v-1ae8ae93] {\n    height: 100vh;\n}\n.flex-center[data-v-1ae8ae93] {\n    -webkit-box-align: center;\n            align-items: center;\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-pack: start;\n            justify-content: flex-start;\n}\n.position-ref[data-v-1ae8ae93] {\n    position: relative;\n}\n.top-right[data-v-1ae8ae93] {\n    position: absolute;\n    right: 10px;\n    top: 18px;\n}\n.content[data-v-1ae8ae93] {\n    text-align: center;\n}\n.title[data-v-1ae8ae93] {\n    font-size: 60px;\n}\n.links>a[data-v-1ae8ae93] {\n    color: #636b6f;\n    padding: 0 25px;\n    font-size: 12px;\n    font-weight: 600;\n    letter-spacing: .1rem;\n    text-decoration: none;\n    text-transform: uppercase;\n}\n.m-b-md[data-v-1ae8ae93] {\n    margin-bottom: 30px;\n    color: #000000;\n}\n\n", ""]);
+exports.push([module.i, "\n.full-height[data-v-1ae8ae93] {\n    height: 100vh;\n}\n.flex-center[data-v-1ae8ae93] {\n    -webkit-box-align: center;\n            align-items: center;\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-pack: center;\n            justify-content: center;\n}\n.position-ref[data-v-1ae8ae93] {\n    position: relative;\n}\n.top-right[data-v-1ae8ae93] {\n    position: absolute;\n    right: 10px;\n    top: 18px;\n}\n.content[data-v-1ae8ae93] {\n    text-align: center;\n}\n.title[data-v-1ae8ae93] {\n    font-size: 60px;\n}\n.links>a[data-v-1ae8ae93] {\n    color: #636b6f;\n    padding: 0 25px;\n    font-size: 12px;\n    font-weight: 600;\n    letter-spacing: .1rem;\n    text-decoration: none;\n    text-transform: uppercase;\n}\n.m-b-md[data-v-1ae8ae93] {\n    margin-bottom: 30px;\n    color: #000000;\n}\n\n", ""]);
 
 // exports
 
@@ -2808,7 +2826,7 @@ var render = function() {
         { staticClass: "m-b-md" },
         [
           _c("h2", { staticClass: "title m-b-md" }, [
-            _vm._v("\n                        Diagnose\n                    ")
+            _vm._v("\n                Diagnose\n            ")
           ]),
           _vm._v(" "),
           _c("InjurySelector"),
@@ -17724,6 +17742,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+ // Components and expose global default data
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('ToggleButton', vue_js_toggle_button__WEBPACK_IMPORTED_MODULE_2__["ToggleButton"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('InjurySelector', _components_InjurySelector_vue__WEBPACK_IMPORTED_MODULE_3__["default"]);
