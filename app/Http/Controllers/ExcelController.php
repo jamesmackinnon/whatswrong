@@ -22,7 +22,7 @@ class ExcelController extends Controller
 
         $fileName = time() . '.' . $request->fileimage->getClientOriginalExtension();
 
-        $request->image->move(public_path('files'), $fileName);
+        $request->file->move(public_path('files'), $fileName);
 
         return response()->json(['success' => 'You have successfully upload image.']);
 
