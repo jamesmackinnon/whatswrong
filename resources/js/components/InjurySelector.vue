@@ -28,6 +28,7 @@
 <script>
     export default {
         data: function () {
+            // Default UI state before fetching initial values from DB
             return {
                 injury: {
                     knee: false,
@@ -44,9 +45,7 @@
             // Fetch initial values from Database via API
 
             var self = this;
-
-
-
+            
             $.ajax({
                 url: '/api/injury',
                 method: 'GET',
@@ -54,16 +53,12 @@
                     var defaults = JSON.parse(data);
 
                     self.injury = {
-
-                        knee: Boolean(defaults.knee),
-                        hip: Boolean(defaults.hip),
-                        spinal: Boolean(defaults.spinal),
-                        wrist: Boolean(defaults.wrist),
-                        whiplash: Boolean(defaults.whiplash)
-
+                         knee: Boolean(defaults.knee),
+                         hip: Boolean(defaults.hip),
+                         spinal: Boolean(defaults.spinal),
+                         wrist: Boolean(defaults.wrist),
+                         whiplash: Boolean(defaults.whiplash)
                     }
-
-
                 },
                 error: function (error) {
                     console.error(error);
@@ -72,21 +67,29 @@
         },
 
         updated() {
+            // Tell other components injuries updated
             E.$emit('updated', this.injury);
 
+            // Explcit remap of boolean to int values for DB model
+            var injuryMap = {
+                knee: +this.injury.knee,
+                hip: +this.injury.hip,
+                spinal: +this.injury.spinal,
+                wrist: +this.injury.wrist,
+                whiplash: +this.injury.whiplash,
+            }
+
+           
+            // Post data to API for update
             $.ajax({
-                url: 'api/injury',
+                url: '/api/injury',
                 method: 'POST',
-                data: this.injury,
-                success: function () {
-                    console.log('POSTED!');
+                data: injuryMap,
+                success: function (data) {
+                    // console.log('posted.');
                 }
             });
         },
-
-        methods: {
-
-        }
     }
 
 </script>

@@ -180,6 +180,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
+    // Default UI state before fetching initial values from DB
     return {
       injury: {
         knee: false,
@@ -212,17 +213,25 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   updated: function updated() {
-    E.$emit('updated', this.injury);
+    // Tell other components injuries updated
+    E.$emit('updated', this.injury); // Explcit remap of boolean to int values for DB model
+
+    var injuryMap = {
+      knee: +this.injury.knee,
+      hip: +this.injury.hip,
+      spinal: +this.injury.spinal,
+      wrist: +this.injury.wrist,
+      whiplash: +this.injury.whiplash // Post data to API for update
+
+    };
     $.ajax({
-      url: 'api/injury',
+      url: '/api/injury',
       method: 'POST',
-      data: this.injury,
-      success: function success() {
-        console.log('POSTED!');
+      data: injuryMap,
+      success: function success(data) {// console.log('posted.');
       }
     });
-  },
-  methods: {}
+  }
 });
 
 /***/ }),
